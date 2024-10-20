@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <meta charset="UTF-8">
+    <title>Bienvenido - Sistema de Gestión de Pizzas</title>
+</head>
+<body>
+<div class="menu">
+    <div class="welcome-container">
+        <img src="" alt="" />
+        <h1>Bienvenido al Sistema de Gestión de Pizzas</h1>
+        <p>Selecciona una opción para gestionar los diferentes recursos:</p>
+        <div class="options">
+            <a href="/pizzas" target="contentFrame">Gestión de Pizzas</a>
+            <a href="/stock" target="contentFrame">Gestión de Stock</a>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <iframe src="" name="contentFrame"></iframe>
+</div>
+</body>
+</html>

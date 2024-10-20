@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Pizzas</title>
+  <link rel="stylesheet" th:href="@{/pizza.css}" />
+</head>
+<body>
+<h1>Lista de Pizzas</h1>
+<a href="/pizzas/crear">Crear Nueva Pizza</a>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nombre Pizza</th>
+    <th>Precio</th>
+    <th>Acciones</th>
+  </tr>
+  <th:block th:each="pizza : ${pizzas}">
+    <tr>
+      <td th:text="${pizza.idPizza}"></td>
+      <td th:text="${pizza.nombre}"></td>
+      <td th:text="${pizza.precio}"></td>
+      <td>
+        <!-- Enlace para eliminar -->
+        <a th:href="@{/pizzas/eliminar/{id}(id=${pizza.idPizza})}">Eliminar</a>
+        <!-- Enlace para editar -->
+        <a th:href="@{/pizzas/editar/{id}(id=${pizza.idPizza})}">Editar</a>
+      </td>
+    </tr>
+  </th:block>
+</table>
+</body>
+</html>

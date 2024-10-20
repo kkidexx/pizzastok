@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stock de Pizzas</title>
+    <link rel="stylesheet" th:href="@{/stok.css}" />
+</head>
+<body>
+<h1>Lista de Stock</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre Pizza</th>
+        <th>Cantidad</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="stock : ${stock}">
+        <td th:text="${stock.pizza.idPizza}"></td> <!-- Usamos el ID de la pizza -->
+        <td th:text="${stock.pizza.nombre != null ? stock.pizza.nombre : 'Sin pizza'}"></td>
+        <td th:text="${stock.cantidad}"></td>
+        <td>
+            <!-- Enlace solo para editar cantidad y acciones -->
+            <a th:href="@{/stock/editar/{id}(id=${stock.idStock})}">Editar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
